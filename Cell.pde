@@ -8,15 +8,18 @@ class Cell {
     pos= indexToPos(x, y);
   }
   void show() {
-    if(val==0) return;
+    if (val==0) return;
     pushMatrix();
     translate(pos.x, pos.y);
     noFill();
-    if(val<0){
+    if (val<0) {
+      stroke(#05AEFF);
       line(-l/3, -l/3, l/3, l/3);
       line(-l/3, l/3, l/3, -l/3);
-    }else ellipse(0, 0, l*.66, l*.66);
-    
+    } else {
+      stroke(#FFF705);
+      ellipse(0, 0, l*.66, l*.66);
+    }
     popMatrix();
   }
 }
